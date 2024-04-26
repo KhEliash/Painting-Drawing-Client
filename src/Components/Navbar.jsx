@@ -144,12 +144,12 @@ const Navbar = () => {
         </div>
 
         <Link to={'/login'}>
-          <a className="btn btn-sm lg:min-h-0 lg:h-10 lg:w-20  bg-orange-500">
+          <a className="btn btn-sm lg:min-h-0 lg:h-10 lg:w-20 text-white bg-orange-500">
             Login
           </a>
         </Link>
         <Link to={'/register'}>
-          <a className="btn btn-sm lg:min-h-0 lg:h-10 lg:w-20  bg-orange-500">
+          <a className="btn btn-sm lg:min-h-0 lg:h-10 lg:w-20 text-white bg-orange-500">
             Register
           </a>
         </Link>
