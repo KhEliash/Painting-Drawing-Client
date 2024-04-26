@@ -12,6 +12,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
+import { Fade, Slide } from "react-awesome-reveal";
 
 const Slider = () => {
   return (
@@ -41,9 +42,12 @@ const Slider = () => {
 
             <div className="absolute top-0 left-0  w-full h-[200px] lg:h-[600px] flex ml-12 text-wrap">
               <div className=" flex flex-col items-start  justify-center space-y-3">
-                <h1 className="text-5xl font-extrabold text-orange-500">
-                  Nature's Palette
-                </h1>
+                <Slide cascade>
+                  <h1 className="text-5xl font-extrabold text-orange-500">
+                    Nature's Palette
+                  </h1>
+                </Slide>
+
                 <br />
                 <p className="text-2xl ">
                   Immerse yourself in the breathtaking beauty of our landscapes.
@@ -70,9 +74,11 @@ const Slider = () => {
 
             <div className="absolute top-0 left-0  w-full h-[200px] lg:h-[600px] flex ml-12 text-wrap">
               <div className=" flex flex-col items-start  justify-center space-y-3">
-                <h1 className="text-5xl font-extrabold text-orange-500">
-                  Elegant Brushstrokes
-                </h1>
+                <Slide cascade>
+                  <h1 className="text-5xl font-extrabold text-orange-500">
+                    Elegant Brushstrokes
+                  </h1>
+                </Slide>
                 <br />
                 <p className="text-2xl text-[#f7f74b] ">
                   Indulge in the rich textures and captivating hues of oil
@@ -99,9 +105,11 @@ const Slider = () => {
 
             <div className="absolute top-0 left-0  w-full h-[200px] lg:h-[600px] flex ml-12 text-wrap">
               <div className=" flex flex-col items-start  justify-center space-y-3">
-                <h1 className="text-5xl font-extrabold text-orange-500">
-                  Whimsical Watercolors
-                </h1>
+                <Slide cascade>
+                  <h1 className="text-5xl font-extrabold text-orange-500">
+                    Whimsical Watercolors
+                  </h1>
+                </Slide>
                 <br />
                 <p className="text-2xl  text-[#f7f74b]">
                   Dive into the ethereal world of watercolor artistry.
