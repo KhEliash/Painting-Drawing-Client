@@ -9,7 +9,7 @@ const Error = () => {
   return (
     <div className="text-center mt-3 space-y-3">
       <Helmet>
-        <title>Error - Factory Fusion</title>
+        <title>Error - PaintingDrawing</title>
       </Helmet>
 
       <h1 className="text-3xl font-bold text-red-500">Oops!</h1>
