@@ -1,18 +1,80 @@
+import { useContext } from "react";
 import { Helmet } from "react-helmet";
 import { FaGithub, FaGoogle } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { AuthContext } from "../Authprovider/AuthProvider";
+import swal from "sweetalert";
 
 const LogIn = () => {
-  const google = () => {};
-  const github = () => {};
-  const handleLogin = () => {};
+  const { signIn, googleLogIn, githubLogIn } = useContext(AuthContext);
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const google = () => {
+    googleLogIn()
+      .then((result) => {
+        swal({
+          text: "Successfully login",
+          icon: "success",
+        });
+
+        navigate(location?.state ? location.state : "/");
+      })
+      .catch((error) => {
+        swal({
+          text: error.message,
+          icon: "warning",
+        });
+      });
+  };
+  const github = () => {
+    githubLogIn()
+      .then((result) => {
+        swal({
+          text: "Successfully login",
+          icon: "success",
+        });
+
+        navigate(location?.state ? location.state : "/");
+      })
+      .catch((error) => {
+        swal({
+          text: error.message,
+          icon: "warning",
+        });
+      });
+  };
+  const handleLogin = (e) => {
+    e.preventDefault();
+    const form = new FormData(e.currentTarget);
+    // console.log(form);
+    const email = form.get("email");
+    const password = form.get("password");
+    console.log(email, password);
+
+    signIn(email, password)
+      .then((result) => {
+        swal({
+          text: "Successfully login",
+          icon: "success",
+        });
+
+        navigate(location?.state ? location.state : "/");
+      })
+      .catch((error) => {
+        swal({
+          text: error.message,
+          icon: "warning",
+        });
+      });
+  };
   return (
     <div className="hero min-h-screen bg-base-200">
       <Helmet>
         <title>Login - PaintingDrawing</title>
       </Helmet>
       <div className="p-5 rounded-xl shadow-2xl bg-base-100">
-        <h1 className="font-bold text-2xl text-center text-black">
+        <h1 className="font-bold text-2xl text-center text-orange-500">
           Login Here
         </h1>
         <form className="lg:card-body" onSubmit={handleLogin}>
@@ -54,7 +116,7 @@ const LogIn = () => {
         </p>
         <hr className="mb-3" />
         <div>
-          <h1 className="text-xl text-center font-bold text-black">
+          <h1 className="text-xl text-center font-bold text-orange-500">
             Login with . . .
           </h1>
 
