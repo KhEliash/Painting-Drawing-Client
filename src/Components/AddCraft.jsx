@@ -1,6 +1,6 @@
 import React from 'react';
 
-const AddSpot = () => {
+const AddCraft = () => {
     return (
         <div>
             add
@@ -8,4 +8,4 @@ const AddSpot = () => {
     );
 };
 
-export default AddSpot;
+export default AddCraft;

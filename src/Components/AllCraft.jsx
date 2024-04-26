@@ -1,6 +1,6 @@
  
 
-const AllSpot = () => {
+const AllCraft = () => {
     return (
         <div>
             AllSpot
@@ -8,4 +8,4 @@ const AllSpot = () => {
     );
 };
 
-export default AllSpot;
+export default AllCraft;

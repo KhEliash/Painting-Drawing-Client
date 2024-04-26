@@ -37,26 +37,26 @@ const Navbar = () => {
       </li>
       <li>
         <NavLink
-          to={"/allspot"}
+          to={"/allcraft"}
           className={({ isActive }) => {
             return isActive
               ? "text-orange-500 rounded-none border-4 border-t-0 border-x-0 border-b-orange-500"
               : "";
           }}
         >
-          All Tourists Spot
+          All Art & craft Items
         </NavLink>
       </li>
       <li>
         <NavLink
-          to={"/addspot"}
+          to={"/addcraft"}
           className={({ isActive }) => {
             return isActive
               ? "text-orange-500 rounded-none border-4 border-t-0 border-x-0 border-b-orange-500"
               : "";
           }}
         >
-          Add Tourists Spot
+         Add Craft Item
         </NavLink>
       </li>
       <li>
@@ -68,7 +68,7 @@ const Navbar = () => {
               : "";
           }}
         >
-          My List
+           My Art&Craft List
         </NavLink>
       </li>
     </>
@@ -118,7 +118,7 @@ const Navbar = () => {
           </ul>
         </div>
 
-        <img src={logo} alt="logo" className="h-8 lg:h-16 w-15 lg:w-30" />
+        <img src={logo} alt="logo" className="h-8 lg:h-16 w-8 lg:w-16 rounded-full" />
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1 space-x-2">{links}</ul>
