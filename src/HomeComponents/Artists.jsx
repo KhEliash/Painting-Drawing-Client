@@ -9,9 +9,9 @@ const Artists = () => {
     AOS.init();
   }, []);
   return (
-    <div className="mt-12 ">
+    <div className="mt-24 ">
       <Zoom>
-        <h1 className="text-2xl font-bold lg:text-4xl text-center text-orange-500 ">
+        <h1 className="text-2xl font-bold lg:text-4xl text-center text-orange-500 mb-12">
           Meet the Makers
         </h1>
       </Zoom>
@@ -29,8 +29,8 @@ const Artists = () => {
             className="w-full rounded-xl"
           />
         </div>
-        <div className="w-1/2     text-wrap p-5" data-aos="fade-left">
-          <p className="mt-3">
+        <div className="w-1/2  flex items-center justify-center  text-wrap mt-10 p-0 md:p-5" data-aos="fade-left">
+          <p className="mt-3 h-1/2 text-wrap   ">
             <span className="font-extrabold text-2xl text-orange-500">W</span>
             elcome to the world of creativity guided by{" "}
             <span className="text-orange-500 font-bold">Emily Rodriguez</span>.
@@ -49,7 +49,7 @@ const Artists = () => {
             of handmade creations ignite your imagination.
           </p>
         </div>
-        <div className="absolute top-3 hidden md:block lg:block">
+        <div className="absolute top-5  hidden md:block lg:block">
           <h1
             className=" text-3xl font-bold text-orange-500  "
             data-aos="fade-left"
