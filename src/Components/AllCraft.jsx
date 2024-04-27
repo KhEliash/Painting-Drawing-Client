@@ -2,19 +2,7 @@ import { Link, useLoaderData } from "react-router-dom";
 
 const AllCraft = () => {
   const crafts = useLoaderData();
-  const {
-    itemName,
-    image,
-    description,
-    price,
-    rating,
-    processing_time,
-    name,
-    email,
-    subcategory,
-    customize,
-    stock_status,
-  } = crafts;
+   
 
   return (
     <div>
