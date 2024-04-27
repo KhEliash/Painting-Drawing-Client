@@ -14,6 +14,7 @@ import Error from "./Components/Error";
 import PrivetRouts from "./Routs/PrivateRouts";
 import ViewDetails from "./Components/ViewDetails";
 import CraftItems from "./HomeComponents/CraftItems";
+import UpdateCraft from "./Components/UpdateCraft";
 
 const router = createBrowserRouter([
   {
@@ -65,6 +66,10 @@ const router = createBrowserRouter([
           </PrivetRouts>
         ),
       },
+      {
+        path:'/update/:id',
+        element: <UpdateCraft></UpdateCraft>
+      }
     ],
   },
 ]);

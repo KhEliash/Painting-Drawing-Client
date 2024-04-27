@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Authprovider/AuthProvider";
 import Aos from "aos";
+import { Link } from "react-router-dom";
 
 const Mylist = () => {
   useEffect(() => {
@@ -55,9 +56,11 @@ const Mylist = () => {
                 <span className="text-red-600">{c.customize}</span>
               </p>
               <div className="card-actions justify-end mt-2">
-                <button className="btn bg-green-500 text-white border-none">
-                  Update
-                </button>
+                <Link to={`/update/${c._id}`}>
+                  <button className="btn bg-green-500 text-white border-none">
+                    Update
+                  </button>
+                </Link>
                 <button className="btn bg-red-500 text-white border-none">
                   Delete
                 </button>
