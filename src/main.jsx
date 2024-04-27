@@ -56,13 +56,9 @@ const router = createBrowserRouter([
         path: "/register",
         element: <Register></Register>,
       },
-      // {
-      //   path: "/craftitem",
-      //   element: <CraftItems></CraftItems>,
-      //   loader: () => fetch("http://localhost:5000/addCraft"),
-      // },
+       
       {
-        path: "/viewdetails",
+        path: "/viewdetails/:id",
         element: (
           <PrivetRouts>
             <ViewDetails></ViewDetails>

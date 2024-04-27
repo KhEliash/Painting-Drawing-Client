@@ -48,7 +48,7 @@ const AllCraft = () => {
                   <h2 className="text-xl font-bold text-gray-500">{c.name}</h2>
                 </td>
                 <td>
-                  <Link to={'/viewdetails'}>
+                  <Link to={`/viewdetails/${c._id}`}>
                     <button className="btn bg-orange-500 text-white hover:text-orange-500">
                       View DEtails
                     </button>
