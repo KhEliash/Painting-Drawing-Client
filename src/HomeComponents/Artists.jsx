@@ -17,7 +17,7 @@ const Artists = () => {
       </Zoom>
       <h3 className="text-center my-3 text-xl font-bold  ">
         <span className="text-center my-3 text-xl font-bold text-lime-500">
-          <Typewriter words={["Maker of the month"]} loop={2} />
+          <Typewriter words={["Maker of the month"]} loop={Infinity} />
         </span>
       </h3>
       {/* content */}
@@ -29,7 +29,10 @@ const Artists = () => {
             className="w-full rounded-xl"
           />
         </div>
-        <div className="w-1/2  flex items-center justify-center  text-wrap mt-10 p-0 md:p-5" data-aos="fade-left">
+        <div
+          className="w-1/2  flex items-center justify-center  text-wrap mt-10 p-0 md:p-5"
+          data-aos="fade-left"
+        >
           <p className="mt-3 h-1/2 text-wrap   ">
             <span className="font-extrabold text-2xl text-orange-500">W</span>
             elcome to the world of creativity guided by{" "}

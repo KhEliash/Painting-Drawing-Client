@@ -50,7 +50,7 @@ const LogIn = () => {
     // console.log(form);
     const email = form.get("email");
     const password = form.get("password");
-    console.log(email, password);
+    // console.log(email, password);
 
     signIn(email, password)
       .then((result) => {
