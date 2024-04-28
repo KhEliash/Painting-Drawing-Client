@@ -147,6 +147,7 @@ const AddCraft = () => {
                 name="name"
                 placeholder="Name"
                 className="input input-bordered"
+                defaultValue={user?.displayName}
                 required
               />
             </div>
@@ -157,7 +158,7 @@ const AddCraft = () => {
               <input
                 type="email"
                 name="email"
-                placeholder="email"
+                placeholder="Give your logged in Email"
                 className="input input-bordered"
                 defaultValue={user?.email}
                 required
