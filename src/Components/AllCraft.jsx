@@ -1,3 +1,4 @@
+import { Slide } from "react-awesome-reveal";
 import { Link, useLoaderData } from "react-router-dom";
 
 const AllCraft = () => {
@@ -5,9 +6,11 @@ const AllCraft = () => {
 
   return (
     <div>
-      <h1 className="text-center my-5 text-3xl text-orange-500 font-bold">
-        Here is our all items collections
-      </h1>
+      <Slide>
+        <h1 className="text-center my-5 text-xl lg:text-3xl text-orange-500 font-bold">
+          Here is our all items collections
+        </h1>
+      </Slide>
       <div className="overflow-x-auto">
         <table className="table ">
           {/* head */}
@@ -26,7 +29,7 @@ const AllCraft = () => {
             {crafts.map((c) => (
               <tr
                 key={c._id}
-                className="border-b-4 border-orange-300 bg-gray-50"
+                className="border-b-4 border-orange-300"
               >
                 <td className="flex items-center justify-start">
                   <img

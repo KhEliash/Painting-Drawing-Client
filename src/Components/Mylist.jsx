@@ -3,7 +3,7 @@ import { AuthContext } from "../Authprovider/AuthProvider";
 import Aos from "aos";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
-import { data } from "autoprefixer";
+ 
 
 const Mylist = () => {
   useEffect(() => {
@@ -51,7 +51,7 @@ const Mylist = () => {
   };
   return (
     <div>
-      hu
+      <h1 className="text-center mt-12 flex justify-center items-center gap-2 text-2xl font-bold text-orange-500"><span className="bg-green-400 w-[8px] h-[40px] ml-2 rounded-full"></span><span  data-aos="fade-left">My add craft items</span></h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-12 gap-6 mt-24">
         {items.map((c) => (
           <div

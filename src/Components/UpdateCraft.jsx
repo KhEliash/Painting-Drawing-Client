@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Slide } from "react-awesome-reveal";
 import { useParams } from "react-router-dom";
 import swal from "sweetalert";
 
@@ -66,10 +67,13 @@ const UpdateCraft = () => {
       });
   };
   return (
-    <div>
-      <h1>update:{craft.itemName}</h1>
+    <div className="px-3">
+      
+      <Slide>
+      <h1 className="text-center text-3xl font-bold text-orange-500 mt-12">Update craft here</h1>
+      </Slide>
 
-      <div>
+      <div className="p-5 bg-base-200 rounded-xl mt-12">
         <form action="" onSubmit={handleUpdate}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             <div className="form-control">
