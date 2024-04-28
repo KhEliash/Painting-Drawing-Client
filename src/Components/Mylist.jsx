@@ -2,6 +2,8 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Authprovider/AuthProvider";
 import Aos from "aos";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
+import { data } from "autoprefixer";
 
 const Mylist = () => {
   useEffect(() => {
@@ -9,6 +11,7 @@ const Mylist = () => {
   }, []);
   const { user } = useContext(AuthContext);
   const [items, setItems] = useState([]);
+  const [control, setControl] = useState(false);
   useEffect(() => {
     fetch(`http://localhost:5000/myCart/${user?.email}`)
       .then((res) => res.json())
@@ -16,8 +19,36 @@ const Mylist = () => {
         console.log(data);
         setItems(data);
       });
-  }, [user]);
+  }, [user, control]);
 
+  const handleDelete = (id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/delete/${id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.deletedCount > 0) {
+              Swal.fire({
+                title: "Deleted!",
+                text: "Your file has been deleted.",
+                icon: "success",
+              });
+              setControl(!control);
+            }
+          });
+      }
+    });
+  };
   return (
     <div>
       hu
@@ -61,7 +92,10 @@ const Mylist = () => {
                     Update
                   </button>
                 </Link>
-                <button className="btn bg-red-500 text-white border-none">
+                <button
+                  onClick={() => handleDelete(c._id)}
+                  className="btn bg-red-500 text-white border-none"
+                >
                   Delete
                 </button>
               </div>
@@ -74,3 +108,32 @@ const Mylist = () => {
 };
 
 export default Mylist;
+
+// fetch(`http://localhost:5000/delete/${id}`, {
+//       method: "DELETE",
+//     })
+//       .then((res) => res.json())
+//       .then((data) => {
+//         if (data.deletedCount > 0) {
+//           Swal.fire({
+//             title: "Are you sure?",
+//             text: "You won't be able to revert this!",
+//             icon: "warning",
+//             showCancelButton: true,
+//             confirmButtonColor: "#3085d6",
+//             cancelButtonColor: "#d33",
+//             confirmButtonText: "Yes, delete it!",
+//           }).then((result) => {
+//             if (result.isConfirmed) {
+//               Swal.fire({
+//                 title: "Deleted!",
+//                 text: "Your file has been deleted.",
+//                 icon: "success",
+//               });
+//               setControl(!control);
+//             }
+//           });
+
+//         }
+//     setItems(data);
+//     });

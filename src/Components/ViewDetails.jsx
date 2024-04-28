@@ -20,6 +20,8 @@ const ViewDetails = () => {
     return (
         <div>
             <h1>{craft.itemName}</h1>
+            <img src={craft.image} alt="" />
+             
         </div>
     );
 };

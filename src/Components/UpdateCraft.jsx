@@ -160,7 +160,7 @@ const UpdateCraft = () => {
                 name="subcategory"
               >
                 <option disabled selected>
-                  Select your category
+                {craft.subcategory}
                 </option>
                 <option>Landscape Painting</option>
                 <option> Portrait Drawing</option>
@@ -179,7 +179,7 @@ const UpdateCraft = () => {
                 name="customize"
               >
                 <option disabled selected>
-                  Want to customize?
+                  {craft.customize}
                 </option>
                 <option>Yes</option>
                 <option>No</option>
@@ -194,7 +194,7 @@ const UpdateCraft = () => {
                 name="stock_status"
               >
                 <option disabled selected>
-                  Stock
+                {craft.stock_status}
                 </option>
                 <option>In stock</option>
                 <option>Made to order</option>

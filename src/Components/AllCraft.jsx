@@ -2,7 +2,6 @@ import { Link, useLoaderData } from "react-router-dom";
 
 const AllCraft = () => {
   const crafts = useLoaderData();
-   
 
   return (
     <div>
@@ -10,7 +9,7 @@ const AllCraft = () => {
         Here is our all items collections
       </h1>
       <div className="overflow-x-auto">
-        <table className="table">
+        <table className="table ">
           {/* head */}
           <thead>
             <tr className="font-bold text-xl">
@@ -32,12 +31,12 @@ const AllCraft = () => {
                 <td className="flex items-center justify-start">
                   <img
                     src={c.image}
-                    alt=""
-                    className="w-2/3 h-[250px] rounded-xl"
+                    alt="image"
+                    className="w-2/3 h-24  lg:h-[250px] rounded-xl"
                   />
                 </td>
                 <td>
-                  <h2 className="text-xl font-bold text-gray-500">
+                  <h2 className="textarea-md lg:text-xl font-bold text-gray-500">
                     {c.itemName}
                   </h2>
                 </td>
@@ -45,12 +44,14 @@ const AllCraft = () => {
                   <h2 className="font-bold text-gray-500">{c.price}</h2>
                 </td>
                 <td>
-                  <h2 className="text-xl font-bold text-gray-500">{c.name}</h2>
+                  <h2 className="textarea-md lg:text-xl font-bold text-gray-500">
+                    {c.name}
+                  </h2>
                 </td>
                 <td>
                   <Link to={`/viewdetails/${c._id}`}>
-                    <button className="btn bg-orange-500 text-white hover:text-orange-500">
-                      View DEtails
+                    <button className="btn  font-light bg-orange-500 text-white hover:text-orange-500">
+                      View Details
                     </button>
                   </Link>
                 </td>
