@@ -6,12 +6,12 @@ import { useParams } from "react-router-dom";
 const ViewDetails = () => {
   useEffect(() => {
     Aos.init({
-      delay: 2500,
+      delay: 500,
     });
   }, []);
   const { id } = useParams();
   const [craft, setCraft] = useState({});
-  // console.log(id);
+  // console.log(id, craft);
   const {
     itemName,
     image,
@@ -26,17 +26,17 @@ const ViewDetails = () => {
     stock_status,
   } = craft;
   useEffect(() => {
-    fetch(`http://localhost:5000/singleCraft/${id}`)
+    fetch(`https://painting-drawing-server.vercel.app/singleCraft/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setCraft(data);
         // console.log(data);
       });
-  }, []);
+  }, [id]);
 
   return (
-    <div className="flex flex-col md:flex-row p-5 items-center">
-      <div className="w-1/2 p-5">
+    <div className="flex flex-col md:flex-row p-5 items-center gap-3">
+      <div className="w-full lg:w-1/2  ">
         <Flip>
           <img
             src={image}
@@ -45,10 +45,10 @@ const ViewDetails = () => {
           />
         </Flip>
       </div>
-      <div className="w-1/2 bg-gray-50 p-5 rounded-xl  flex flex-col items-center justify-center ">
+      <div className="w-full lg:w-1/2 bg-gray-50 p-5 rounded-xl  flex flex-col items-center justify-center ">
         <div className="space-y-2" data-aos="fade-up-left">
           <h1
-            className="text-3xl text-orange-500 font-bold"
+            className="text-2xl md:text-3xl text-orange-500 font-bold"
             data-aos="fade-left"
           >
             {itemName}
@@ -84,7 +84,7 @@ const ViewDetails = () => {
             {customize}
           </p>
           <p>
-            <span className="font-bold text-green-400">Stock status :</span>{" "}
+            <span className="font-bold text-green-400">Stock status :</span>
             {stock_status}
           </p>
         </div>

@@ -13,7 +13,7 @@ const Mylist = () => {
   const [items, setItems] = useState([]);
   const [control, setControl] = useState(false);
   useEffect(() => {
-    fetch(`http://localhost:5000/myCart/${user?.email}`)
+    fetch(`https://painting-drawing-server.vercel.app/myCart/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -32,7 +32,7 @@ const Mylist = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/delete/${id}`, {
+        fetch(`https://painting-drawing-server.vercel.app/delete/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -60,7 +60,7 @@ const Mylist = () => {
             data-aos="fade-up"
           >
             <figure>
-              <img src={c.image} alt="img" className="h-[300px] w-full" />
+              <img src={c.image} alt="img" className="h-[250px] lg:h-[300px] w-full" />
             </figure>
             <div className="card-body">
               <h2 className="card-title">{c.itemName}</h2>
@@ -108,32 +108,4 @@ const Mylist = () => {
 };
 
 export default Mylist;
-
-// fetch(`http://localhost:5000/delete/${id}`, {
-//       method: "DELETE",
-//     })
-//       .then((res) => res.json())
-//       .then((data) => {
-//         if (data.deletedCount > 0) {
-//           Swal.fire({
-//             title: "Are you sure?",
-//             text: "You won't be able to revert this!",
-//             icon: "warning",
-//             showCancelButton: true,
-//             confirmButtonColor: "#3085d6",
-//             cancelButtonColor: "#d33",
-//             confirmButtonText: "Yes, delete it!",
-//           }).then((result) => {
-//             if (result.isConfirmed) {
-//               Swal.fire({
-//                 title: "Deleted!",
-//                 text: "Your file has been deleted.",
-//                 icon: "success",
-//               });
-//               setControl(!control);
-//             }
-//           });
-
-//         }
-//     setItems(data);
-//     });
+ 

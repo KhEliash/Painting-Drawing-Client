@@ -38,7 +38,7 @@ const AddCraft = () => {
     };
     // data fetch
 
-    fetch("http://localhost:5000/addCraft", {
+    fetch("https://painting-drawing-server.vercel.app/addCraft", {
       method: "POST",
       headers: {
         "content-type": "application/json",

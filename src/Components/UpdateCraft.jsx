@@ -8,7 +8,7 @@ const UpdateCraft = () => {
   const [craft, setCraft] = useState({});
 
   useEffect(() => {
-    fetch(`http://localhost:5000/singleCraft/${id}`)
+    fetch(`https://painting-drawing-server.vercel.app/singleCraft/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setCraft(data);
@@ -43,7 +43,7 @@ const UpdateCraft = () => {
     };
     // console.log(updateInfo);
 
-    fetch(`http://localhost:5000/updateCraft/${id}`, {
+    fetch(`https://painting-drawing-server.vercel.app/updateCraft/${id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -67,7 +67,7 @@ const UpdateCraft = () => {
       });
   };
   return (
-    <div className="px-3">
+    <div className="px-3 mx-5 lg:mx-0">
       
       <Slide>
       <h1 className="text-center text-3xl font-bold text-orange-500 mt-12">Update craft here</h1>
@@ -86,7 +86,7 @@ const UpdateCraft = () => {
                 placeholder="Items name"
                 className="input input-bordered"
                 defaultValue={craft.name}
-                required
+                // required
               />
             </div>
             <div className="form-control">
@@ -99,7 +99,7 @@ const UpdateCraft = () => {
                 placeholder="Photo URL"
                 className="input input-bordered"
                 defaultValue={craft.image}
-                required
+                // required
               />
             </div>
             <div className="form-control">
@@ -112,7 +112,7 @@ const UpdateCraft = () => {
                 placeholder="Description"
                 className="input input-bordered"
                 defaultValue={craft.description}
-                required
+                // required
               />
             </div>
             <div className="form-control">
@@ -125,7 +125,7 @@ const UpdateCraft = () => {
                 placeholder="Price"
                 className="input input-bordered"
                 defaultValue={craft.price}
-                required
+                // required
               />
             </div>
             <div className="form-control">
@@ -138,7 +138,7 @@ const UpdateCraft = () => {
                 placeholder="Rating"
                 className="input input-bordered"
                 defaultValue={craft.rating}
-                required
+                // required
               />
             </div>
             <div className="form-control">
@@ -151,7 +151,7 @@ const UpdateCraft = () => {
                 placeholder="Time"
                 className="input input-bordered"
                 defaultValue={craft.processing_time}
-                required
+                // required
               />
             </div>
 

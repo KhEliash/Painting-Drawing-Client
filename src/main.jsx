@@ -25,13 +25,12 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: ()=> fetch('http://localhost:5000/addCraft')
-
+        loader:()=>fetch("https://painting-drawing-server.vercel.app/addCraft"),
       },
       {
         path: "/allcraft",
         element: <AllCraft></AllCraft>,
-        loader: () => fetch("http://localhost:5000/addCraft"),
+        loader: () =>fetch("https://painting-drawing-server.vercel.app/addCraft"),
       },
       {
         path: "/addcraft",
@@ -57,7 +56,7 @@ const router = createBrowserRouter([
         path: "/register",
         element: <Register></Register>,
       },
-       
+
       {
         path: "/viewdetails/:id",
         element: (
@@ -67,9 +66,9 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path:'/update/:id',
-        element: <UpdateCraft></UpdateCraft>
-      }
+        path: "/update/:id",
+        element: <UpdateCraft></UpdateCraft>,
+      },
     ],
   },
 ]);
