@@ -3,7 +3,7 @@ import { AuthContext } from "../Authprovider/AuthProvider";
 import Aos from "aos";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
- 
+import { FaFilter } from "react-icons/fa";
 
 const Mylist = () => {
   useEffect(() => {
@@ -11,12 +11,13 @@ const Mylist = () => {
   }, []);
   const { user } = useContext(AuthContext);
   const [items, setItems] = useState([]);
+  // console.log(items[0].customize);\
   const [control, setControl] = useState(false);
   useEffect(() => {
     fetch(`https://painting-drawing-server.vercel.app/myCart/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         setItems(data);
       });
   }, [user, control]);
@@ -49,10 +50,53 @@ const Mylist = () => {
       }
     });
   };
+
+  const handleYes = (e) => {
+    const custom = e.target.text;
+    // console.log(yes);
+    fetch(`http://localhost:5000/myCar/${custom}`)
+      .then((res) => res.json())
+      .then((data) => {
+        // console.log(data);
+        setItems(data);
+      });
+  };
+  const handleNo = (e) => {
+    const custom = e.target.text;
+    // console.log(custom);
+    fetch(`http://localhost:5000/myCar/${custom}`)
+      .then((res) => res.json())
+      .then((data) => {
+        // console.log(data);
+        setItems(data);
+      });
+  };
+
   return (
     <div>
-      <h1 className="text-center mt-12 flex justify-center items-center gap-2 text-2xl font-bold text-orange-500"><span className="bg-green-400 w-[8px] h-[40px] ml-2 rounded-full"></span><span  data-aos="fade-left">My add craft items</span></h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-12 gap-6 mt-24">
+      <h1 className="text-center mt-12 flex justify-center items-center gap-2 text-2xl font-bold text-orange-500">
+        <span className="bg-green-400 w-[8px] h-[40px] ml-2 rounded-full"></span>
+        <span data-aos="fade-left">My add craft items</span>
+      </h1>
+      <div className="mt-5  lg:mt-12">
+        <details className="dropdown ">
+          <summary className="m-1 btn">
+            Filter by customization{" "}
+            <span className="text-orange-500 text-xl">
+              <FaFilter />
+            </span>
+          </summary>
+          <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-200 rounded-box w-52">
+            <li>
+              <a onClick={handleYes}>Yes</a>
+            </li>
+            <li>
+              <a onClick={handleNo}>No</a>
+            </li>
+          </ul>
+        </details>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-12 gap-6 mt-12 lg:mt-24">
         {items.map((c) => (
           <div
             key={c._id}
@@ -60,7 +104,11 @@ const Mylist = () => {
             data-aos="fade-up"
           >
             <figure>
-              <img src={c.image} alt="img" className="h-[250px] lg:h-[300px] w-full" />
+              <img
+                src={c.image}
+                alt="img"
+                className="h-[250px] lg:h-[300px] w-full"
+              />
             </figure>
             <div className="card-body">
               <h2 className="card-title">{c.itemName}</h2>
@@ -108,4 +156,3 @@ const Mylist = () => {
 };
 
 export default Mylist;
- 

@@ -40,8 +40,8 @@ const Slider = () => {
               className="w-full h-[400px] lg:h-[600px]"
             />
 
-            <div className="absolute top-0 left-0  w-full h-[400px] lg:h-[600px] flex ml-12 text-wrap">
-              <div className=" flex flex-col items-start  justify-center lg:space-y-3">
+            <div className="absolute top-0 left-0 bg-gradient-to-r from-[#2f2f2f] to-[rgba(21,21,21,0)] w-full h-[400px] lg:h-[600px] flex  text-wrap">
+              <div className=" flex flex-col items-start  justify-center lg:space-y-3 ml-12">
                 <Slide cascade>
                   <h1 className="text-3xl lg:text-5xl font-extrabold text-orange-500">
                     Nature's Palette
@@ -49,7 +49,7 @@ const Slider = () => {
                 </Slide>
 
                 <br />
-                <p className="lg:text-2xl ">
+                <p className="lg:text-2xl text-white">
                   Immerse yourself in the breathtaking beauty of our landscapes.
                   Explore vibrant colors, serene scenes, and endless
                   inspiration.
@@ -72,15 +72,15 @@ const Slider = () => {
               className="w-full h-[400px] lg:h-[600px]"
             />
 
-            <div className="absolute top-0 left-0  w-full h-[400px] lg:h-[600px] flex ml-12 text-wrap">
-              <div className=" flex flex-col items-start  justify-center lg:space-y-3">
+            <div className="absolute top-0 left-0  w-full h-[400px] lg:h-[600px] flex bg-gradient-to-r from-[#2f2f2f] to-[rgba(21,21,21,0)] text-wrap">
+              <div className=" flex flex-col items-start  ml-12 justify-center lg:space-y-3">
                 <Slide cascade>
                   <h1 className=" text-3xl lg:text-5xl  font-extrabold text-orange-500">
                     Elegant Brushstrokes
                   </h1>
                 </Slide>
                 <br />
-                <p className="lg:text-2xl text-[#f7f74b] ">
+                <p className="lg:text-2xl text-white ">
                   Indulge in the rich textures and captivating hues of oil
                   paintings. Let every stroke tell a story, evoking emotions and
                   igniting imaginations
@@ -103,15 +103,15 @@ const Slider = () => {
               className="w-full h-[400px] lg:h-[600px]"
             />
 
-            <div className="absolute top-0 left-0  w-full h-[400px] lg:h-[600px] flex ml-12 text-wrap">
-              <div className=" flex flex-col items-start  justify-center lg:space-y-3">
+            <div className="absolute top-0 left-0  w-full h-[400px] lg:h-[600px] flex bg-gradient-to-r from-[#2f2f2f] to-[rgba(21,21,21,0)] text-wrap">
+              <div className=" flex flex-col items-start ml-12 justify-center lg:space-y-3">
                 <Slide cascade>
                   <h1 className="text-3xl lg:text-5xl font-extrabold text-orange-500">
                     Whimsical Watercolors
                   </h1>
                 </Slide>
                 <br />
-                <p className="lg:text-2xl  text-[#f7f74b]">
+                <p className="lg:text-2xl  text-white">
                   Dive into the ethereal world of watercolor artistry.
                   Experience the fluidity of colors blending seamlessly,
                   creating dreamlike landscapes and enchanting scenes
