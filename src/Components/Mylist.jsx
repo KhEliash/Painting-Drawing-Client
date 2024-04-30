@@ -11,7 +11,8 @@ const Mylist = () => {
   }, []);
   const { user } = useContext(AuthContext);
   const [items, setItems] = useState([]);
-  // console.log(items[0].customize);\
+  const [sort, setSort] = useState([]);
+  console.log(items);
   const [control, setControl] = useState(false);
   useEffect(() => {
     fetch(`https://painting-drawing-server.vercel.app/myCart/${user?.email}`)
@@ -19,6 +20,7 @@ const Mylist = () => {
       .then((data) => {
         // console.log(data);
         setItems(data);
+        setSort(data);
       });
   }, [user, control]);
 
@@ -51,25 +53,18 @@ const Mylist = () => {
     });
   };
 
-  const handleYes = (e) => {
-    const custom = e.target.text;
-    // console.log(yes);
-    fetch(`http://localhost:5000/myCar/${custom}`)
-      .then((res) => res.json())
-      .then((data) => {
-        // console.log(data);
-        setItems(data);
-      });
-  };
-  const handleNo = (e) => {
-    const custom = e.target.text;
-    // console.log(custom);
-    fetch(`http://localhost:5000/myCar/${custom}`)
-      .then((res) => res.json())
-      .then((data) => {
-        // console.log(data);
-        setItems(data);
-      });
+  console.log(sort);
+
+  const handleDropdownChange = (event) => {
+    const array = [...items];
+    const selection = event.target.value;
+    if (selection === "All") {
+      setSort(array);
+    } else if (selection === "Yes") {
+      setSort(array.filter((obj) => obj.customize === "Yes"));
+    } else if (selection === "No") {
+      setSort(array.filter((obj) => obj.customize === "No"));
+    }
   };
 
   return (
@@ -79,25 +74,21 @@ const Mylist = () => {
         <span data-aos="fade-left">My add craft items</span>
       </h1>
       <div className="mt-5  lg:mt-12">
-        <details className="dropdown ">
-          <summary className="m-1 btn">
-            Filter by customization{" "}
-            <span className="text-orange-500 text-xl">
-              <FaFilter />
-            </span>
-          </summary>
-          <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-200 rounded-box w-52">
-            <li>
-              <a onClick={handleYes}>Yes</a>
-            </li>
-            <li>
-              <a onClick={handleNo}>No</a>
-            </li>
-          </ul>
-        </details>
+        {/* Dropdown menu */}
+        <select
+          onChange={handleDropdownChange}
+          defaultValue="All"
+          className="p-5 bg-base-200 rounded-xl text-xl font-bold text-orange-500"
+        >
+          <option value="All" className="">
+            Sorting By Customization
+          </option>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-12 gap-6 mt-12 lg:mt-24">
-        {items.map((c) => (
+        {sort.map((c) => (
           <div
             key={c._id}
             className="card bg-base-100 shadow-xl relative"

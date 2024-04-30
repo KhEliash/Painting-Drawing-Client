@@ -24,7 +24,7 @@ const CraftItems = () => {
             data-aos="fade-up"
           >
             <figure>
-              <img src={c.image} alt="img" className="h-[300px] w-full" />
+              <img src={c.image} alt="img" className=" h-[250px] lg:h-[350px] w-full" />
             </figure>
             <div className="card-body">
               <h2 className="card-title">{c.itemName}</h2>

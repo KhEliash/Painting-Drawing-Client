@@ -37,10 +37,10 @@ const Slider = () => {
             <img
               src="https://i.ibb.co/WtVCXF0/landscape.jpg"
               alt="img"
-              className="w-full h-[400px] lg:h-[600px]"
+              className="w-full h-[400px] lg:h-[600px] rounded-xl"
             />
 
-            <div className="absolute top-0 left-0 bg-gradient-to-r from-[#2f2f2f] to-[rgba(21,21,21,0)] w-full h-[400px] lg:h-[600px] flex  text-wrap">
+            <div className="absolute rounded-xl top-0 left-0 bg-gradient-to-r from-[#2f2f2f] to-[rgba(21,21,21,0)] w-full h-[400px] lg:h-[600px] flex  text-wrap">
               <div className=" flex flex-col items-start  justify-center lg:space-y-3 ml-12">
                 <Slide cascade>
                   <h1 className="text-3xl lg:text-5xl font-extrabold text-orange-500">
@@ -69,10 +69,10 @@ const Slider = () => {
             <img
               src="https://i.ibb.co/MCdMFr1/oil-paint.jpg"
               alt="img"
-              className="w-full h-[400px] lg:h-[600px]"
+              className="w-full h-[400px] lg:h-[600px] rounded-xl"
             />
 
-            <div className="absolute top-0 left-0  w-full h-[400px] lg:h-[600px] flex bg-gradient-to-r from-[#2f2f2f] to-[rgba(21,21,21,0)] text-wrap">
+            <div className="absolute rounded-xl top-0 left-0  w-full h-[400px] lg:h-[600px] flex bg-gradient-to-r from-[#2f2f2f] to-[rgba(21,21,21,0)] text-wrap">
               <div className=" flex flex-col items-start  ml-12 justify-center lg:space-y-3">
                 <Slide cascade>
                   <h1 className=" text-3xl lg:text-5xl  font-extrabold text-orange-500">
@@ -100,10 +100,10 @@ const Slider = () => {
             <img
               src="https://i.ibb.co/m5X0cQX/water-color.png"
               alt="img"
-              className="w-full h-[400px] lg:h-[600px]"
+              className="w-full h-[400px] lg:h-[600px] rounded-xl"
             />
 
-            <div className="absolute top-0 left-0  w-full h-[400px] lg:h-[600px] flex bg-gradient-to-r from-[#2f2f2f] to-[rgba(21,21,21,0)] text-wrap">
+            <div className="absolute rounded-xl top-0 left-0  w-full h-[400px] lg:h-[600px] flex bg-gradient-to-r from-[#2f2f2f] to-[rgba(21,21,21,0)] text-wrap">
               <div className=" flex flex-col items-start ml-12 justify-center lg:space-y-3">
                 <Slide cascade>
                   <h1 className="text-3xl lg:text-5xl font-extrabold text-orange-500">
