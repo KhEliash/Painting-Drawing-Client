@@ -4,7 +4,7 @@ import { Link, useLoaderData } from "react-router-dom";
 
 const CraftItems = () => {
   const crafts = useLoaderData();
-  console.log(crafts);
+  // console.log(crafts);
   useEffect(() => {
     Aos.init();
   }, []);

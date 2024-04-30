@@ -1,13 +1,18 @@
+import Aos from "aos";
+import { useEffect } from "react";
 import { Slide } from "react-awesome-reveal";
 import { Link, useLoaderData } from "react-router-dom";
 
 const AllCraft = () => {
   const crafts = useLoaderData();
+  useEffect(() => {
+    Aos.init();
+  }, []);
 
   return (
     <div>
       <Slide>
-        <h1 className="text-center my-5 text-xl lg:text-3xl text-orange-500 font-bold">
+        <h1  data-aos="fade-right" className="text-center my-5 text-xl lg:text-3xl text-orange-500 font-bold">
           Here is our all items collections
         </h1>
       </Slide>
@@ -35,7 +40,7 @@ const AllCraft = () => {
                   <img
                     src={c.image}
                     alt="image"
-                    className="w-2/3 h-24  lg:h-[250px] rounded-xl"
+                    className="w-2/3 h-24  lg:h-[200px] rounded-xl"
                   />
                 </td>
                 <td>

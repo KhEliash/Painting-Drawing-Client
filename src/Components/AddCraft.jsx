@@ -1,10 +1,14 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { AuthContext } from "../Authprovider/AuthProvider";
 import swal from "sweetalert";
+import Aos from "aos";
 
 const AddCraft = () => {
   const { user } = useContext(AuthContext);
   console.log(user);
+  useEffect(() => {
+    Aos.init();
+  }, []);
 
   const handleAddCart = (e) => {
     e.preventDefault();
@@ -61,7 +65,7 @@ const AddCraft = () => {
   return (
     <div className="px-12">
       <div className="p-5 shadow-xl my-12 rounded-xl bg-base-200">
-        <h1 className="text-center text-xl md:text-3xl font-bold text-orange-500">
+        <h1  data-aos="fade-right" className="text-center text-xl md:text-3xl w-full font-bold text-orange-500">
           Add Your items here..
         </h1>
         <form action="" onSubmit={handleAddCart}>

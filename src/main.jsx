@@ -14,6 +14,8 @@ import Error from "./Components/Error";
 import PrivetRouts from "./Routs/PrivateRouts";
 import ViewDetails from "./Components/ViewDetails";
  import UpdateCraft from "./Components/UpdateCraft";
+import ArtCategory from "./HomeComponents/ArtCategory";
+import Category from "./Components/Category";
 
 const router = createBrowserRouter([
   {
@@ -55,6 +57,10 @@ const router = createBrowserRouter([
         path: "/register",
         element: <Register></Register>,
       },
+      {
+        path: "/category",
+        element: <Category></Category>,
+      },
 
       {
         path: "/viewdetails/:id",
@@ -68,6 +74,7 @@ const router = createBrowserRouter([
         path: "/update/:id",
         element: <UpdateCraft></UpdateCraft>,
       },
+       
     ],
   },
 ]);
