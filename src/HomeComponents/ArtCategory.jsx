@@ -11,7 +11,7 @@ const ArtCategory = () => {
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:5000/category")
+    fetch("https://painting-drawing-server.vercel.app/category")
       .then((res) => res.json())
       .then((data) => {
         setCategory(data);
